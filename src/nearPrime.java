@@ -16,9 +16,7 @@ public class nearPrime {
         double rootfl = Math.floor(Math.sqrt(in));
         boolean ret = false;
         //quick and dirty check for awkward early primes
-        if(in == 1 || in == 2){
-            ret = true;
-        }
+        if(in == 1 || in == 2) ret = true;
         //loop to check each value up to rootfl for being divisible in in
         for(int i = 0; i <= rootfl || ret == true; i++) {
             if (in % i == 0) {
@@ -36,14 +34,27 @@ public class nearPrime {
      */
     public double upPrime(int in){
         double ret = 0;
-        int bert
-        //
+        int bert = 2 * in -2;
+        //quick and dirty return for early primes
+       switch (in){
+           case 1: return 2;
+           case 2: return 3;
+           case 3: return 5;
+       }
+        //loop to check each number for primality up to bert, this sucks dont do this ever
+        for(int i = 4; i <= bert; i++){
+            if(isPrime(i)){
+                ret = i;
+                break;
+            }
+        }
+        return ret;
     }
     /*
         Main Method, accepts user input and plugs it into the function to calculate the nearest prime, if needed
      */
     public static void main(String args[]){
-        system.out.println("Enter a number");
+        System.out.println("Enter a number");
 
     }
 }
