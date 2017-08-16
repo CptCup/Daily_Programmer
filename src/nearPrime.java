@@ -96,6 +96,5 @@ public class nearPrime {
         if (isPrime(number)){
             System.out.println(number + " is prime.");
         }else System.out.println((int)downPrime(number) + " < " + number + " < " + (int)upPrime(number));
-
     }
 }
