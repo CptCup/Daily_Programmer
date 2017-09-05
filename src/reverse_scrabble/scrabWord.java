@@ -74,8 +74,25 @@ public class scrabWord {
     public String getWordString() {
         return wordString;
     }
+
+    /**
+     * tests for equality in the way we care about, if they are the same type, same string and travel in the same
+     * direction from the same start point then they are equal
+     * @param otherPoint the thing we are checking for equality
+     * @return a boolean indicating true if the two things are the same, false if they are not the same
+     */
     @Override
     public boolean equals(Object otherPoint){
-        return false;
+        //if otherPoint is not a scrabWord it cant be equal to another for our purposes
+        if (!(otherPoint instanceof scrabWord)){
+            return false;
+        /* ugly conditional, in The King's, if the length of the string contained in this object is not the same as the
+            the string it is being compared to, they cannot be the same scrabWord
+         */
+        }else if(!(this.wordString.equals(((scrabWord) otherPoint).getWordString()))){
+            return false;
+        }else if (!(this.getDirection()))
+        //if otherPoint doesnt fail any of our checks for equality, they must be equal
+        return true;
     }
 }
