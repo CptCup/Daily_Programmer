@@ -25,6 +25,14 @@ public class reverseScrabble {
         scanWords.close();
         return diction;
     }
+
+    /**
+     *
+     * @param inBoard
+     * @param length
+     * @param height
+     * @return
+     */
     public ArrayList<scrabWord> findWords(char[][] inBoard, int length, int height){
         //A temporary variables to keep track of a potential word's string direction and starting point
         String curWord = "";
