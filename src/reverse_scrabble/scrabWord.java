@@ -45,7 +45,7 @@ public class scrabWord {
 
     /**
      * Mutator for the text String
-     * @param inString
+     * @param inString the string that the word will be changed to
      */
     public void setWordString(String inString){
         this.wordString = inString;
@@ -91,7 +91,17 @@ public class scrabWord {
          */
         }else if(!(this.wordString.equals(((scrabWord) otherPoint).getWordString()))){
             return false;
-        }else if (!(this.getDirection()))
+            /*Slightly less gross looking conditional, this one evaluates if the boolean indicating the direction the
+            word is traveling*/
+        }else if (!(this.getDirection() == ((scrabWord) otherPoint).getDirection())) {
+            return false;
+            /*
+               Conditional to check if the starting positions of the two words are the same, because we could have two
+               words traveling in the same direction with the same word in multiple locations
+             */
+        }else if (!(this.getStartPos().equals(((scrabWord) otherPoint).getStartPos())){
+            return false;
+        }
         //if otherPoint doesnt fail any of our checks for equality, they must be equal
         return true;
     }
